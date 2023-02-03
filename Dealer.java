@@ -43,7 +43,7 @@ public class Dealer extends Actor
     
     protected void checkIfEndGame()
     {
-        if(Deck.getNumCardsInDeck() == 0)
+        if(triplesRemaining == 0)
         {
             Greenfoot.stop();
         }
