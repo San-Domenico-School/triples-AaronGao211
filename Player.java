@@ -34,12 +34,13 @@ public class Player extends Actor
         if(threeCardsSelected())
         {
             dealer.checkIfTriple(cardsOnBoard, cardsSelected, selectedCardsIndex);
+            resetCardsSelected();
         }
     }
     
-    public void addedToWorld()
+    public void addedToWorld(World world)
     {
-        cardsOnBoard = (ArrayList) getWorld().getObjects(Card.class);
+        cardsOnBoard = (ArrayList) world.getObjects(Card.class);
     }
     
     private void resetCardsSelected()

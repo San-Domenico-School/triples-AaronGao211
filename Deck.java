@@ -64,9 +64,9 @@ public class Deck
     {
         for(int i = 0; i < unShuffledDeck.length; i++)
         {
-            shuffledDeck.add((int) Math.random() * shuffledDeck.size(), unShuffledDeck[i]);
+            shuffledDeck.add((int) (Math.random() * shuffledDeck.size()), unShuffledDeck[i]);
         }
-        shuffledDeck.remove(0);
+        shuffledDeck.remove(shuffledDeck.size() - 1);
     }
     
     

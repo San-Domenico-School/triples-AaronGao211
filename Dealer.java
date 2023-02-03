@@ -15,7 +15,6 @@ public class Dealer extends Actor
     private Deck deck; 
     private int triplesRemaining;
     
- 
     public void addedToWorld(World world)
     {
         dealBoard();
@@ -46,6 +45,7 @@ public class Dealer extends Actor
         if(triplesRemaining == 0)
         {
             Greenfoot.stop();
+            getWorld().showText("You won!", 215, 300);
         }
     }
     
@@ -55,7 +55,10 @@ public class Dealer extends Actor
         
         int shadings = cardsSelected[0].getShading() + cardsSelected[1].getShading() + cardsSelected[2].getShading();
         
-        int colors = cardsSelected[0].getColor().ordinal() + cardsSelected[1].getNumberOfShapes() + cardsSelected[2].getNumberOfShapes();
+        int colors = cardsSelected[0].getColor().ordinal() + cardsSelected[1].getColor().ordinal() + cardsSelected[2].getColor().ordinal();
+        
+        int numberOfShapes = cardsSelected[0].getNumberOfShapes() + cardsSelected[1].getNumberOfShapes() + cardsSelected[2].getNumberOfShapes();
+        
         
         if(shapes % 3 == 0 && shadings % 3 == 0 && colors % 3 == 0)
         {
